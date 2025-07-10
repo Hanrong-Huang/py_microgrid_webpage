@@ -207,8 +207,8 @@
 
 .microgrid-diagram {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -216,7 +216,8 @@
   align-items: center;
   justify-content: center;
   border: 3px solid var(--primary);
-  overflow: hidden;
+  overflow: visible;
+  margin: 40px;
 }
 
 .diagram-component {
@@ -226,17 +227,16 @@
   align-items: center;
   gap: var(--spacing-xs);
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   background-clip: padding-box;
-  min-width: 90px;
-  min-height: 90px;
+  min-width: 85px;
+  min-height: 85px;
   justify-content: center;
   backdrop-filter: blur(10px);
-  position: relative;
   z-index: 10;
 }
 
@@ -269,26 +269,26 @@
 }
 
 .solar {
-  top: 15%;
+  top: -15%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .wind {
   top: 50%;
-  right: 10%;
+  right: -15%;
   transform: translateY(-50%);
 }
 
 .battery {
-  bottom: 15%;
+  bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .genset {
   top: 50%;
-  left: 10%;
+  left: -15%;
   transform: translateY(-50%);
 }
 
@@ -301,8 +301,8 @@
   color: white;
   padding: var(--spacing-lg);
   border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.2);
   border: 4px solid rgba(255, 255, 255, 0.9);
@@ -339,49 +339,107 @@
   z-index: 1;
 }
 
-/* Energy flow lines from components to center */
-.diagram-component::after {
+/* Enhanced interconnection system */
+.microgrid-diagram::after {
   content: '';
   position: absolute;
-  width: 3px;
-  height: 100px;
-  background: linear-gradient(to bottom, var(--primary), transparent);
-  border-radius: 2px;
-  opacity: 0.7;
-  animation: energy-pulse 2s ease-in-out infinite;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, rgba(59, 130, 246, 0.6), rgba(16, 185, 129, 0.6), rgba(245, 158, 11, 0.6), rgba(239, 68, 68, 0.6), rgba(59, 130, 246, 0.6));
+  mask: radial-gradient(circle at center, transparent 48%, black 50%, black 52%, transparent 54%);
+  -webkit-mask: radial-gradient(circle at center, transparent 48%, black 50%, black 52%, transparent 54%);
+  animation: rotate-energy 8s linear infinite;
   z-index: 2;
 }
 
+/* Energy flow lines - improved positioning */
+.diagram-component::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(to center, var(--primary), rgba(59, 130, 246, 0.3));
+  border-radius: 2px;
+  opacity: 0.8;
+  animation: energy-flow 2s ease-in-out infinite;
+  z-index: 3;
+}
+
 .solar::after {
-  bottom: -100px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to bottom, #f59e0b, transparent);
+  background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.3));
   animation-delay: 0s;
 }
 
 .wind::after {
-  left: -100px;
+  left: -80px;
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
-  background: linear-gradient(to bottom, #10b981, transparent);
+  background: linear-gradient(180deg, #10b981, rgba(16, 185, 129, 0.3));
   animation-delay: 0.5s;
 }
 
 .battery::after {
-  top: -100px;
+  top: -80px;
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
-  background: linear-gradient(to bottom, #3b82f6, transparent);
+  background: linear-gradient(180deg, #3b82f6, rgba(59, 130, 246, 0.3));
   animation-delay: 1s;
 }
 
 .genset::after {
-  right: -100px;
+  right: -80px;
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
-  background: linear-gradient(to bottom, #ef4444, transparent);
+  background: linear-gradient(180deg, #ef4444, rgba(239, 68, 68, 0.3));
   animation-delay: 1.5s;
+}
+
+/* Control flow indicators */
+.diagram-component::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 1px;
+  opacity: 0.6;
+  animation: control-signal 3s ease-in-out infinite;
+  z-index: 4;
+}
+
+.solar::before {
+  bottom: -60px;
+  left: calc(50% + 8px);
+  animation-delay: 0.2s;
+}
+
+.wind::before {
+  left: -60px;
+  top: calc(50% + 8px);
+  transform: rotate(90deg);
+  animation-delay: 0.7s;
+}
+
+.battery::before {
+  top: -60px;
+  left: calc(50% - 8px);
+  transform: rotate(180deg);
+  animation-delay: 1.2s;
+}
+
+.genset::before {
+  right: -60px;
+  top: calc(50% - 8px);
+  transform: rotate(-90deg);
+  animation-delay: 1.7s;
 }
 
 /* Professional animations */
@@ -421,13 +479,26 @@
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-@keyframes energy-pulse {
+@keyframes energy-flow {
   0%, 100% { 
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scaleY(1);
+    filter: brightness(1);
   }
   50% { 
-    opacity: 0.9;
+    opacity: 1;
+    transform: scaleY(1.1);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes control-signal {
+  0%, 100% { 
+    opacity: 0.2;
+    transform: scaleY(0.8);
+  }
+  50% { 
+    opacity: 0.8;
     transform: scaleY(1.2);
   }
 }
@@ -441,11 +512,28 @@
   .microgrid-diagram {
     width: 350px;
     height: 350px;
+    margin: 20px;
+  }
+  
+  .solar {
+    top: -20%;
+  }
+  
+  .wind {
+    right: -20%;
+  }
+  
+  .battery {
+    bottom: -20%;
+  }
+  
+  .genset {
+    left: -20%;
   }
   
   .diagram-center {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     padding: var(--spacing-md);
   }
   

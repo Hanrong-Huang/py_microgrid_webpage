@@ -73,7 +73,7 @@ cd Py-Microgrid
    - Copy your API key for use in the examples
 
 4. **Run the quick start example:**
-   - Open `quick_start_example.ipynb` in Jupyter
+   - Open `py_microgrid/quick_start_example.ipynb` in Jupyter
    - Follow the step-by-step tutorial
 
 ### GitHub Pages Deployment
@@ -197,7 +197,7 @@ This website is part of the Py-Microgrid project. Please refer to the main proje
 
 ### Main Py-Microgrid Project
 - **📦 [Main Repository](https://github.com/Hanrong-Huang/Py-Microgrid)** - The core Python package
-- **📓 [Quick Start Notebook](https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/quick_start_example.ipynb)** - Jupyter tutorial
+- **📓 [Quick Start Notebook](https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/py_microgrid/quick_start_example.ipynb)** - Jupyter tutorial
 - **📖 [Documentation](https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md)** - Comprehensive guide
 
 ### Website & Deployment
