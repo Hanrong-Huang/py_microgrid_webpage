@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install -g html-minifier-terser
+        npm install -g clean-css-cli
+        npm install -g uglify-js
+        
+    - name: Build and optimize
+      run: |
+        # Create dist directory
+        mkdir -p dist
+        
+        # Copy and minify HTML
+        html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js index.html -o dist/index.html
+        
+        # Copy and minify CSS
+        mkdir -p dist/assets/css
+        cleancss -o dist/assets/css/main.css assets/css/main.css
+        cleancss -o dist/assets/css/components.css assets/css/components.css
+        
+        # Copy and minify JS
+        mkdir -p dist/assets/js
+        uglifyjs assets/js/main.js -c -m -o dist/assets/js/main.js
+        
+        # Copy other assets
+        cp -r assets/images dist/assets/ 2>/dev/null || true
+        cp -r assets/fonts dist/assets/ 2>/dev/null || true
+        cp -r docs dist/ 2>/dev/null || true
+        cp -r examples dist/ 2>/dev/null || true
+        cp -r api dist/ 2>/dev/null || true
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist

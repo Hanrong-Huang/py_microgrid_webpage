@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples - Py-Microgrid</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="nav-brand">
+                        <a href="../" class="nav-logo">
+                            <span class="logo-icon">⚡</span>
+                            <span class="logo-text">Py-Microgrid</span>
+                        </a>
+                    </div>
+                    <div class="nav-links">
+                        <a href="../#features" class="nav-link">Features</a>
+                        <a href="../#demo" class="nav-link">Demo</a>
+                        <a href="../docs/" class="nav-link">Documentation</a>
+                        <a href="./" class="nav-link">Examples</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-2xl">
+                    <h1>Examples</h1>
+                    <p class="section-description">Real-world examples and use cases</p>
+                </div>
+                
+                <div class="grid grid-cols-1">
+                    <div class="card">
+                        <h3>Basic Optimization Example</h3>
+                        <p>Simple microgrid optimization with solar PV and battery storage.</p>
+                        <pre><code>from py_microgrid.tools.optimization import SystemOptimizer
+
+# Load configuration
+config = {
+    'location': 'Denver, CO',
+    'load_profile': 'residential',
+    'pv_capacity': 300,  # kW
+    'battery_capacity': 800  # kWh
+}
+
+# Initialize optimizer
+optimizer = SystemOptimizer(config)
+
+# Run optimization
+results = optimizer.optimize()
+print(f"LCOE: ${results.lcoe:.3f}/kWh")
+print(f"Renewable fraction: {results.renewable_fraction:.1%}")
+</code></pre>
+                        <a href="https://github.com/Hanrong-Huang/Py-Microgrid/tree/main/examples" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Multi-Location Analysis</h3>
+                        <p>Batch processing for multiple locations with different resource profiles.</p>
+                        <pre><code>from py_microgrid.tools.batch_processor import BatchProcessor
+
+# Define multiple locations
+locations = [
+    {'name': 'Denver', 'lat': 39.7392, 'lon': -104.9903},
+    {'name': 'Phoenix', 'lat': 33.4484, 'lon': -112.0740},
+    {'name': 'Seattle', 'lat': 47.6062, 'lon': -122.3321}
+]
+
+# Initialize batch processor
+processor = BatchProcessor(locations)
+
+# Run batch optimization
+results = processor.process_all()
+
+# Compare results
+for location, result in results.items():
+    print(f"{location}: LCOE=${result.lcoe:.3f}/kWh")
+</code></pre>
+                        <a href="https://github.com/Hanrong-Huang/Py-Microgrid/tree/main/examples" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

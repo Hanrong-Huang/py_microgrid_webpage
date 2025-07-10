@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Py-Microgrid - Advanced Hybrid Microgrid Simulation & Optimization</title>
+    <meta name="description" content="Professional microgrid simulation and optimization tool for renewable energy systems. Optimize PV, wind, battery, and genset components with economic analysis.">
+    <meta name="keywords" content="microgrid, optimization, renewable energy, HOPP, PV, wind, battery, simulation">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="nav-brand">
+                        <a href="/" class="nav-logo">
+                            <span class="logo-icon">⚡</span>
+                            <span class="logo-text">Py-Microgrid</span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-links hidden-mobile">
+                        <a href="#features" class="nav-link">Features</a>
+                        <a href="#demo" class="nav-link">Demo</a>
+                        <a href="docs/" class="nav-link">Documentation</a>
+                        <a href="examples/" class="nav-link">Examples</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="btn btn-outline hidden-mobile" target="_blank">
+                            GitHub
+                        </a>
+                        <button class="mobile-menu-toggle hidden-desktop" aria-label="Toggle menu">
+                            <span class="hamburger"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="mobile-menu hidden">
+            <div class="mobile-menu-content">
+                <a href="#features" class="mobile-nav-link">Features</a>
+                <a href="#demo" class="mobile-nav-link">Demo</a>
+                <a href="docs/" class="mobile-nav-link">Documentation</a>
+                <a href="examples/" class="mobile-nav-link">Examples</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="btn btn-outline" target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Advanced Hybrid Microgrid<br>
+                            <span class="title-highlight">Simulation & Optimization</span>
+                        </h1>
+                        <p class="hero-description">
+                            Professional-grade microgrid optimization tool that maximizes renewable energy utilization while minimizing costs. 
+                            Optimize PV, wind, battery, and genset components with comprehensive economic analysis.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#installation" class="btn btn-primary">Get Started</a>
+                            <a href="docs/" class="btn btn-outline">View Documentation</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="microgrid-diagram">
+                            <div class="diagram-component solar">
+                                <div class="component-icon">☀️</div>
+                                <div class="component-label">Solar PV</div>
+                            </div>
+                            <div class="diagram-component wind">
+                                <div class="component-icon">💨</div>
+                                <div class="component-label">Wind</div>
+                            </div>
+                            <div class="diagram-component battery">
+                                <div class="component-icon">🔋</div>
+                                <div class="component-label">Battery</div>
+                            </div>
+                            <div class="diagram-component genset">
+                                <div class="component-icon">⚙️</div>
+                                <div class="component-label">Genset</div>
+                            </div>
+                            <div class="diagram-center">
+                                <div class="center-icon">🏠</div>
+                                <div class="center-label">Load</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-banner">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-text">
+                            <div class="metric-title">System Optimization</div>
+                            <div class="metric-desc">Multi-component sizing & configuration</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-text">
+                            <div class="metric-title">Economic Analysis</div>
+                            <div class="metric-desc">LCOE, NPC, and ROI calculations</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">📍</div>
+                        <div class="metric-text">
+                            <div class="metric-title">Multi-Location</div>
+                            <div class="metric-desc">Batch processing for multiple sites</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section features">
+            <div class="container">
+                <div class="section-header text-center mb-2xl">
+                    <h2>Powerful Features for Microgrid Optimization</h2>
+                    <p class="section-description">
+                        Comprehensive tools for renewable energy system design and analysis
+                    </p>
+                </div>
+                
+                <div class="features-grid grid grid-cols-3">
+                    <div class="feature-card card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>System Optimization</h3>
+                        <p>Advanced algorithms optimize PV, wind, battery, and genset components for maximum efficiency and cost-effectiveness.</p>
+                        <ul class="feature-list">
+                            <li>Multi-objective optimization</li>
+                            <li>Component sizing</li>
+                            <li>Configuration analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Flexible Load Management</h3>
+                        <p>Intelligent load management with up to 20% load reduction capability through demand response strategies.</p>
+                        <ul class="feature-list">
+                            <li>Demand response</li>
+                            <li>Load profile analysis</li>
+                            <li>Peak shaving</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Economic Analysis</h3>
+                        <p>Comprehensive financial modeling including LCOE, Net Present Cost, CO2 emissions, and payback analysis.</p>
+                        <ul class="feature-list">
+                            <li>LCOE calculation</li>
+                            <li>NPC analysis</li>
+                            <li>CO2 tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card card">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>Multi-Location Processing</h3>
+                        <p>Batch processing capabilities for analyzing multiple sites simultaneously with location-specific resource data.</p>
+                        <ul class="feature-list">
+                            <li>Batch optimization</li>
+                            <li>Resource mapping</li>
+                            <li>Comparative analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card card">
+                        <div class="feature-icon">🔗</div>
+                        <h3>HOPP Integration</h3>
+                        <p>Seamless integration with HOPP (Hybrid Optimization and Performance Platform) for enhanced simulation capabilities.</p>
+                        <ul class="feature-list">
+                            <li>NREL data integration</li>
+                            <li>Weather modeling</li>
+                            <li>Performance simulation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card card">
+                        <div class="feature-icon">🎛️</div>
+                        <h3>Flexible Configuration</h3>
+                        <p>YAML-based configuration system with extensive customization options for all system parameters.</p>
+                        <ul class="feature-list">
+                            <li>YAML configuration</li>
+                            <li>Parameter tuning</li>
+                            <li>Custom constraints</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="section demo-section">
+            <div class="container">
+                <div class="section-header text-center mb-2xl">
+                    <h2>Interactive Demo</h2>
+                    <p class="section-description">
+                        Try our microgrid optimization calculator with real-time results
+                    </p>
+                </div>
+                
+                <div class="demo-container">
+                    <div class="demo-inputs">
+                        <div class="card">
+                            <h3>Configuration Parameters</h3>
+                            <div class="input-group">
+                                <label for="location">Location</label>
+                                <select id="location">
+                                    <option value="denver">Denver, CO</option>
+                                    <option value="phoenix">Phoenix, AZ</option>
+                                    <option value="seattle">Seattle, WA</option>
+                                    <option value="miami">Miami, FL</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="load">Average Load (kW)</label>
+                                <input type="range" id="load" min="50" max="500" value="200">
+                                <span class="range-value" id="load-value">200 kW</span>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="pv-capacity">PV Capacity (kW)</label>
+                                <input type="range" id="pv-capacity" min="0" max="1000" value="300">
+                                <span class="range-value" id="pv-value">300 kW</span>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="battery-capacity">Battery Capacity (kWh)</label>
+                                <input type="range" id="battery-capacity" min="0" max="2000" value="800">
+                                <span class="range-value" id="battery-value">800 kWh</span>
+                            </div>
+                            
+                            <button class="btn btn-primary" id="calculate-btn">Calculate Optimization</button>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-results">
+                        <div class="card">
+                            <h3>Optimization Results</h3>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <div class="result-label">LCOE</div>
+                                    <div class="result-value" id="lcoe-result">$0.12/kWh</div>
+                                </div>
+                                <div class="result-item">
+                                    <div class="result-label">Net Present Cost</div>
+                                    <div class="result-value" id="npc-result">$2.4M</div>
+                                </div>
+                                <div class="result-item">
+                                    <div class="result-label">Renewable Fraction</div>
+                                    <div class="result-value" id="renewable-result">85%</div>
+                                </div>
+                                <div class="result-item">
+                                    <div class="result-label">CO2 Reduction</div>
+                                    <div class="result-value" id="co2-result">450 tons/year</div>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container">
+                                <canvas id="results-chart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="section installation">
+            <div class="container">
+                <div class="section-header text-center mb-2xl">
+                    <h2>Quick Installation</h2>
+                    <p class="section-description">
+                        Get started with Py-Microgrid in minutes
+                    </p>
+                </div>
+                
+                <div class="installation-steps">
+                    <div class="step-card card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install Dependencies</h3>
+                            <pre><code>pip install HOPP</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Clone Repository</h3>
+                            <pre><code>git clone https://github.com/Hanrong-Huang/Py-Microgrid.git</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Quick Start</h3>
+                            <pre><code>from py_microgrid.tools.optimization import SystemOptimizer
+optimizer = SystemOptimizer(config_path)
+result = optimizer.optimize_system(bounds, initial_conditions)</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-xl">
+                    <a href="docs/" class="btn btn-primary">View Full Documentation</a>
+                    <a href="examples/" class="btn btn-outline">Browse Examples</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Py-Microgrid</h3>
+                    <p>Advanced microgrid simulation and optimization for renewable energy systems.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Hanrong-Huang/Py-Microgrid" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul class="footer-links">
+                        <li><a href="docs/">Getting Started</a></li>
+                        <li><a href="docs/api/">API Reference</a></li>
+                        <li><a href="examples/">Examples</a></li>
+                        <li><a href="docs/tutorials/">Tutorials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/issues">Issues</a></li>
+                        <li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/discussions">Discussions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Py-Microgrid. Open source project for microgrid optimization.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

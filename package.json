@@ -1,0 +1,29 @@
+{
+  "name": "py-microgrid-website",
+  "version": "1.0.0",
+  "description": "Professional website for Py-Microgrid package",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -c-1",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:css": "cleancss -o dist/assets/css/main.min.css assets/css/main.css assets/css/components.css",
+    "build:js": "uglifyjs assets/js/main.js -c -m -o dist/assets/js/main.min.js",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js index.html -o dist/index.html",
+    "serve": "npx http-server dist -p 8080"
+  },
+  "keywords": [
+    "microgrid",
+    "optimization",
+    "renewable-energy",
+    "website",
+    "github-pages"
+  ],
+  "author": "Hanrong Huang",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-minifier-terser": "^7.2.0",
+    "http-server": "^14.1.1",
+    "uglify-js": "^3.17.4"
+  }
+}
