@@ -232,10 +232,18 @@
                         <div class="code-block">
                             <div class="code-header">
                                 <span>Basic Optimization Example</span>
-                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="import sys
-sys.path.insert(0, r'/path/to/Py-Microgrid')
-
+                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="# Set up NREL API key and initialize system
+from py_microgrid.utilities.keys import set_developer_nrel_gov_key
 from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.simulation.resource_files import ResourceDataManager
+
+# Set your NREL API key (get free at: developer.nrel.gov/signup)
+set_developer_nrel_gov_key('your_api_key_here')
+
+# Initialize resource data manager and download data
+resource_manager = ResourceDataManager()
+resource_manager.download_solar_data(lat=39.7392, lon=-104.9903)
+resource_manager.download_wind_data(lat=39.7392, lon=-104.9903)
 
 # Initialize optimizer with configuration
 config_path = 'config/site_config.yaml'
@@ -244,15 +252,23 @@ optimizer = SystemOptimizer(config_path)
 # Run optimization
 results = optimizer.optimize()
 
-# Access results
+# Access comprehensive results
 print(f'LCOE: ${results.lcoe:.3f}/kWh')
 print(f'NPC: ${results.npc:,.0f}')
-print(f'CO2 Emissions: {results.co2_emissions:.1f} tons/year')">Copy</button>
+print(f'Renewable Fraction: {results.renewable_fraction:.1f}%')">Copy</button>
                             </div>
-                            <pre><code>import sys
-sys.path.insert(0, r'/path/to/Py-Microgrid')
-
+                            <pre><code># Set up NREL API key and initialize system
+from py_microgrid.utilities.keys import set_developer_nrel_gov_key
 from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.simulation.resource_files import ResourceDataManager
+
+# Set your NREL API key (get free at: developer.nrel.gov/signup)
+set_developer_nrel_gov_key('your_api_key_here')
+
+# Initialize resource data manager and download data
+resource_manager = ResourceDataManager()
+resource_manager.download_solar_data(lat=39.7392, lon=-104.9903)
+resource_manager.download_wind_data(lat=39.7392, lon=-104.9903)
 
 # Initialize optimizer with configuration
 config_path = 'config/site_config.yaml'
@@ -261,10 +277,10 @@ optimizer = SystemOptimizer(config_path)
 # Run optimization
 results = optimizer.optimize()
 
-# Access results
+# Access comprehensive results
 print(f'LCOE: ${results.lcoe:.3f}/kWh')
 print(f'NPC: ${results.npc:,.0f}')
-print(f'CO2 Emissions: {results.co2_emissions:.1f} tons/year')</code></pre>
+print(f'Renewable Fraction: {results.renewable_fraction:.1f}%')</code></pre>
                         </div>
                     </div>
                     
@@ -272,43 +288,69 @@ print(f'CO2 Emissions: {results.co2_emissions:.1f} tons/year')</code></pre>
                         <div class="code-block">
                             <div class="code-header">
                                 <span>Multi-Location Processing</span>
-                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="from py_microgrid.tools.batch_processor import BatchProcessor
+                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="from py_microgrid.utilities import ConfigManager
+from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.simulation.resource_files import ResourceDataManager
 
-# Define locations
+# Define multiple locations for analysis
 locations = [
     {'name': 'Denver', 'lat': 39.7392, 'lon': -104.9903},
     {'name': 'Phoenix', 'lat': 33.4484, 'lon': -112.0740},
     {'name': 'Seattle', 'lat': 47.6062, 'lon': -122.3321}
 ]
 
-# Initialize batch processor
-processor = BatchProcessor(locations, config_path)
+# Process multiple locations
+results = {}
+for location in locations:
+    # Download resource data for each location
+    resource_manager = ResourceDataManager()
+    resource_manager.download_solar_data(lat=location['lat'], lon=location['lon'])
+    resource_manager.download_wind_data(lat=location['lat'], lon=location['lon'])
+    
+    # Update config for this location
+    config_manager = ConfigManager('config/site_config.yaml')
+    config_manager.update_location(location['lat'], location['lon'])
+    
+    # Run optimization
+    optimizer = SystemOptimizer(config_manager.config_path)
+    result = optimizer.optimize()
+    results[location['name']] = result
 
-# Run batch optimization
-results = processor.process_all()
-
-# Compare results
+# Compare results across locations
 for location, result in results.items():
-    print(f'{location}: LCOE=${result.lcoe:.3f}/kWh')">Copy</button>
+    print(f'{location}: LCOE=${result.lcoe:.3f}/kWh, Renewable: {result.renewable_fraction:.1f}%')">Copy</button>
                             </div>
-                            <pre><code>from py_microgrid.tools.batch_processor import BatchProcessor
+                            <pre><code>from py_microgrid.utilities import ConfigManager
+from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.simulation.resource_files import ResourceDataManager
 
-# Define locations
+# Define multiple locations for analysis
 locations = [
     {'name': 'Denver', 'lat': 39.7392, 'lon': -104.9903},
     {'name': 'Phoenix', 'lat': 33.4484, 'lon': -112.0740},
     {'name': 'Seattle', 'lat': 47.6062, 'lon': -122.3321}
 ]
 
-# Initialize batch processor
-processor = BatchProcessor(locations, config_path)
+# Process multiple locations
+results = {}
+for location in locations:
+    # Download resource data for each location
+    resource_manager = ResourceDataManager()
+    resource_manager.download_solar_data(lat=location['lat'], lon=location['lon'])
+    resource_manager.download_wind_data(lat=location['lat'], lon=location['lon'])
+    
+    # Update config for this location
+    config_manager = ConfigManager('config/site_config.yaml')
+    config_manager.update_location(location['lat'], location['lon'])
+    
+    # Run optimization
+    optimizer = SystemOptimizer(config_manager.config_path)
+    result = optimizer.optimize()
+    results[location['name']] = result
 
-# Run batch optimization
-results = processor.process_all()
-
-# Compare results
+# Compare results across locations
 for location, result in results.items():
-    print(f'{location}: LCOE=${result.lcoe:.3f}/kWh')</code></pre>
+    print(f'{location}: LCOE=${result.lcoe:.3f}/kWh, Renewable: {result.renewable_fraction:.1f}%')</code></pre>
                         </div>
                     </div>
                     

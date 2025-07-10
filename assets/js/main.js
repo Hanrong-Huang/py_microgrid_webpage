@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Professional scroll progress indicator
+    updateScrollProgress();
+    window.addEventListener('scroll', updateScrollProgress);
+    
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -248,10 +252,105 @@ function hideLoading(element) {
     element.style.pointerEvents = 'auto';
 }
 
+// Professional scroll progress indicator
+function updateScrollProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    
+    document.body.style.setProperty('--scroll-progress', scrolled + '%');
+    document.documentElement.style.setProperty('--scroll-width', scrolled + '%');
+}
+
+// Enhanced intersection observer for professional animations
+const enhancedObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+            
+            // Add staggered animation for child elements
+            const children = entry.target.querySelectorAll('.feature-card, .metric, .step-card');
+            children.forEach((child, index) => {
+                setTimeout(() => {
+                    child.classList.add('fade-in-up');
+                }, index * 100);
+            });
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -10% 0px'
+});
+
+// Observe all major sections for enhanced animations
+document.querySelectorAll('.section, .hero, .metrics-banner').forEach(el => {
+    enhancedObserver.observe(el);
+});
+
+// Professional typing effect for hero title
+function typeWriterEffect() {
+    const titleElement = document.querySelector('.hero-title');
+    if (!titleElement) return;
+    
+    const originalText = titleElement.textContent;
+    titleElement.textContent = '';
+    titleElement.style.borderRight = '2px solid var(--primary)';
+    
+    let i = 0;
+    const typeSpeed = 50;
+    
+    function typeChar() {
+        if (i < originalText.length) {
+            titleElement.textContent += originalText.charAt(i);
+            i++;
+            setTimeout(typeChar, typeSpeed);
+        } else {
+            // Remove cursor after typing
+            setTimeout(() => {
+                titleElement.style.borderRight = 'none';
+            }, 1000);
+        }
+    }
+    
+    // Start typing effect after a delay
+    setTimeout(typeChar, 500);
+}
+
+// Enhanced parallax effect for hero section
+function addParallaxEffect() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.5;
+        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    });
+}
+
+// Professional loading animation
+function addLoadingAnimation() {
+    const body = document.body;
+    body.classList.add('loading');
+    
+    // Remove loading class after page load
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            body.classList.remove('loading');
+        }, 300);
+    });
+}
+
+// Initialize professional enhancements
+addLoadingAnimation();
+// typeWriterEffect(); // Uncomment if you want typing effect
+addParallaxEffect();
+
 // Export functions for external use
 window.PyMicrogridWeb = {
     calculateOptimization,
     updateResultsChart,
     showLoading,
-    hideLoading
+    hideLoading,
+    updateScrollProgress
 };
