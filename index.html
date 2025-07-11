@@ -79,6 +79,22 @@
                     </div>
                     <div class="hero-visual">
                         <div class="microgrid-diagram">
+                            <!-- Cable Network Infrastructure -->
+                            <div class="cable-network">
+                                <!-- Main load connection cables -->
+                                <div class="cable cable-solar-load"></div>
+                                <div class="cable cable-wind-load"></div>
+                                <div class="cable cable-battery-load"></div>
+                                <div class="cable cable-genset-load"></div>
+                                
+                                <!-- Interconnection cables between components -->
+                                <div class="cable cable-solar-wind"></div>
+                                <div class="cable cable-wind-battery"></div>
+                                <div class="cable cable-battery-genset"></div>
+                                <div class="cable cable-genset-solar"></div>
+                            </div>
+                            
+                            <!-- Components -->
                             <div class="diagram-component solar">
                                 <div class="component-icon"><i class="fas fa-solar-panel"></i></div>
                                 <div class="component-label">Solar PV</div>
@@ -358,59 +374,73 @@ for location, result in results.items():
                         <div class="code-block">
                             <div class="code-header">
                                 <span>YAML Configuration</span>
-                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="# site_config.yaml
+                                <button class="copy-btn" onclick="copyToClipboard(this)" data-text="# site_config.yaml - Based on actual Py-Microgrid examples
+config:
+  dispatch_options:
+    battery_dispatch: heuristic_load_following
+    grid_charging: true
+    include_lifecycle_count: false
+    n_look_ahead_periods: 48
+    pv_charging_only: false
+    solver: glpk
+
 site:
-  latitude: 39.7392
-  longitude: -104.9903
-  
-system:
+  data:
+    lat: -33.5265
+    lon: 149.1588
+    elev: 1099
+    tz: -6
+    year: 2020
+    urdb_label: 5ca4d1175457a39b23b3d45e
+    
+  desired_schedule:
+    # Load profile data (hourly values)
+    # [250, 280, 320, 340, ...]
+
+technologies:
   pv:
-    capacity_kw: 300
-    tilt: 30
-    azimuth: 180
-  
+    system_capacity_kw: 500
+  wind:
+    system_capacity_kw: 200
   battery:
-    capacity_kwh: 800
-    power_kw: 400
-    
-  genset:
-    capacity_kw: 200
-    fuel_cost_per_gallon: 3.50
-    
-economic:
-  discount_rate: 0.08
-  project_lifetime: 25
-  
-load:
-  peak_kw: 250
-  annual_kwh: 1500000">Copy</button>
+    system_capacity_kw: 300
+    system_capacity_kwh: 1200
+  grid:
+    interconnect_kw: 1000">Copy</button>
                             </div>
-                            <pre><code># site_config.yaml
+                            <pre><code># site_config.yaml - Based on actual Py-Microgrid examples
+config:
+  dispatch_options:
+    battery_dispatch: heuristic_load_following
+    grid_charging: true
+    include_lifecycle_count: false
+    n_look_ahead_periods: 48
+    pv_charging_only: false
+    solver: glpk
+
 site:
-  latitude: 39.7392
-  longitude: -104.9903
-  
-system:
+  data:
+    lat: -33.5265
+    lon: 149.1588
+    elev: 1099
+    tz: -6
+    year: 2020
+    urdb_label: 5ca4d1175457a39b23b3d45e
+    
+  desired_schedule:
+    # Load profile data (hourly values)
+    # [250, 280, 320, 340, ...]
+
+technologies:
   pv:
-    capacity_kw: 300
-    tilt: 30
-    azimuth: 180
-  
+    system_capacity_kw: 500
+  wind:
+    system_capacity_kw: 200
   battery:
-    capacity_kwh: 800
-    power_kw: 400
-    
-  genset:
-    capacity_kw: 200
-    fuel_cost_per_gallon: 3.50
-    
-economic:
-  discount_rate: 0.08
-  project_lifetime: 25
-  
-load:
-  peak_kw: 250
-  annual_kwh: 1500000</code></pre>
+    system_capacity_kw: 300
+    system_capacity_kwh: 1200
+  grid:
+    interconnect_kw: 1000</code></pre>
                         </div>
                     </div>
                 </div>
