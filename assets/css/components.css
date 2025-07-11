@@ -866,31 +866,25 @@
 }
 
 .installation-steps {
-  display: flex !important;
-  flex-direction: column !important;
-  grid-template-columns: none !important;
-  gap: 80px !important;
+  display: block !important;
   max-width: 900px;
-  margin: calc(var(--spacing-2xl) + 40px) auto 0;
+  margin: var(--spacing-2xl) auto 0;
   padding: 0 var(--spacing-md);
-  padding-top: 60px !important;
 }
 
 .step-card {
-  display: flex !important;
-  flex-direction: column !important;
+  display: block !important;
   background: white !important;
   border: 1px solid #e5e7eb !important;
   border-radius: 12px !important;
   padding: var(--spacing-xl) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
-  margin-top: 0 !important;
+  margin-bottom: var(--spacing-xl) !important;
   position: relative !important;
-  min-height: auto !important;
+  transition: box-shadow 0.3s ease !important;
 }
 
 .step-card:hover {
-  transform: none !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -899,40 +893,40 @@
 }
 
 .step-number {
-  position: absolute !important;
-  top: -30px !important;
-  left: var(--spacing-md) !important;
-  width: 50px !important;
-  height: 50px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
   background: var(--primary) !important;
   color: white !important;
   border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   font-weight: 700 !important;
-  font-size: var(--text-xl) !important;
-  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4) !important;
-  border: 4px solid white !important;
-  z-index: 10 !important;
+  font-size: var(--text-base) !important;
+  margin-right: var(--spacing-md) !important;
+  flex-shrink: 0 !important;
+  vertical-align: middle !important;
 }
 
 .step-content {
-  display: block !important;
-  padding: var(--spacing-md) 0 0 0 !important;
+  display: inline-block !important;
+  width: calc(100% - 48px) !important;
+  vertical-align: top !important;
+  padding: 0 !important;
   margin: 0 !important;
 }
 
 .step-content h3 {
-  display: block !important;
+  display: inline !important;
   color: var(--primary) !important;
   margin: 0 0 var(--spacing-md) 0 !important;
   font-size: var(--text-xl) !important;
   font-weight: 600 !important;
+  line-height: 1.4 !important;
 }
 
 .step-content pre {
-  margin: 0 !important;
+  margin: var(--spacing-md) 0 0 0 !important;
   padding: var(--spacing-lg) !important;
   background: var(--neutral-800) !important;
   color: #e5e7eb !important;
@@ -949,27 +943,24 @@
 
 @media (max-width: 768px) {
   .installation-steps {
-    margin-top: 60px !important;
     padding: 0 var(--spacing-sm) !important;
-    padding-top: 40px !important;
-    gap: 60px !important;
+    margin-top: var(--spacing-xl) !important;
   }
   
   .step-card {
     padding: var(--spacing-lg) !important;
-    margin-top: 0 !important;
+    margin-bottom: var(--spacing-lg) !important;
   }
   
   .step-number {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: var(--text-lg) !important;
-    top: -25px !important;
-    left: var(--spacing-sm) !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: var(--text-sm) !important;
+    margin-right: var(--spacing-sm) !important;
   }
   
   .step-content {
-    padding: var(--spacing-sm) 0 0 0 !important;
+    width: calc(100% - 40px) !important;
   }
   
   .step-content h3 {
@@ -980,6 +971,7 @@
   .step-content pre {
     padding: var(--spacing-md) !important;
     font-size: var(--text-xs) !important;
+    margin-top: var(--spacing-sm) !important;
   }
 }
 
