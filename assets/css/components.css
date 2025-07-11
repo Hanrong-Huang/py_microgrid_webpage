@@ -869,10 +869,11 @@
   display: flex !important;
   flex-direction: column !important;
   grid-template-columns: none !important;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-2xl);
   max-width: 900px;
   margin: var(--spacing-2xl) auto 0;
   padding: 0 var(--spacing-md);
+  padding-top: var(--spacing-xl);
 }
 
 .step-card {
@@ -883,7 +884,7 @@
   border-radius: 12px !important;
   padding: var(--spacing-xl) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
-  margin-top: 0 !important;
+  margin-top: var(--spacing-md) !important;
   position: relative !important;
   min-height: auto !important;
 }
@@ -911,8 +912,9 @@
   justify-content: center !important;
   font-weight: 700 !important;
   font-size: var(--text-lg) !important;
-  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3) !important;
   border: 3px solid white !important;
+  z-index: 10 !important;
 }
 
 .step-content {
