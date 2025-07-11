@@ -866,102 +866,117 @@
 }
 
 .installation-steps {
-  display: block;
-  max-width: 1000px;
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: none !important;
+  gap: var(--spacing-xl);
+  max-width: 900px;
   margin: var(--spacing-2xl) auto 0;
   padding: 0 var(--spacing-md);
 }
 
 .step-card {
-  display: block;
-  margin-bottom: var(--spacing-2xl);
-  background: transparent;
-  border: none;
-  padding: 0;
-  box-shadow: none;
+  display: flex !important;
+  flex-direction: column !important;
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: var(--spacing-xl) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  margin-top: 0 !important;
+  position: relative !important;
+  min-height: auto !important;
 }
 
 .step-card:hover {
-  transform: none;
-  box-shadow: none;
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 .step-card::before {
-  display: none;
+  display: none !important;
 }
 
 .step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--primary);
-  color: white;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: var(--text-lg);
-  margin-right: var(--spacing-md);
-  margin-bottom: var(--spacing-sm);
-  vertical-align: top;
+  position: absolute !important;
+  top: -20px !important;
+  left: var(--spacing-md) !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: var(--primary) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: var(--text-lg) !important;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3) !important;
+  border: 3px solid white !important;
 }
 
 .step-content {
-  display: block;
-  padding: 0;
-  margin: 0;
+  display: block !important;
+  padding: var(--spacing-md) 0 0 0 !important;
+  margin: 0 !important;
 }
 
 .step-content h3 {
-  display: inline-block;
-  color: var(--primary);
-  margin: 0 0 var(--spacing-md) 0;
-  font-size: var(--text-xl);
-  font-weight: 600;
-  vertical-align: top;
+  display: block !important;
+  color: var(--primary) !important;
+  margin: 0 0 var(--spacing-md) 0 !important;
+  font-size: var(--text-xl) !important;
+  font-weight: 600 !important;
 }
 
 .step-content pre {
-  margin: 0;
-  padding: var(--spacing-lg);
-  background: var(--neutral-800);
-  color: #e5e7eb;
-  border-radius: 8px;
-  font-size: var(--text-sm);
-  line-height: 1.6;
-  overflow-x: auto;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  margin: 0 !important;
+  padding: var(--spacing-lg) !important;
+  background: var(--neutral-800) !important;
+  color: #e5e7eb !important;
+  border-radius: 8px !important;
+  font-size: var(--text-sm) !important;
+  line-height: 1.6 !important;
+  overflow-x: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
 }
 
 @media (max-width: 768px) {
   .installation-steps {
-    margin-top: var(--spacing-xl);
-    padding: 0 var(--spacing-sm);
+    margin-top: var(--spacing-xl) !important;
+    padding: 0 var(--spacing-sm) !important;
+    gap: var(--spacing-lg) !important;
   }
   
   .step-card {
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg) !important;
+    margin-top: 0 !important;
   }
   
   .step-number {
-    width: 35px;
-    height: 35px;
-    font-size: var(--text-base);
-    margin-bottom: var(--spacing-xs);
+    width: 35px !important;
+    height: 35px !important;
+    font-size: var(--text-base) !important;
+    top: -18px !important;
+    left: var(--spacing-sm) !important;
+  }
+  
+  .step-content {
+    padding: var(--spacing-sm) 0 0 0 !important;
   }
   
   .step-content h3 {
-    font-size: var(--text-lg);
-    margin-bottom: var(--spacing-sm);
+    font-size: var(--text-lg) !important;
+    margin-bottom: var(--spacing-sm) !important;
   }
   
   .step-content pre {
-    padding: var(--spacing-md);
-    font-size: var(--text-xs);
+    padding: var(--spacing-md) !important;
+    font-size: var(--text-xs) !important;
   }
 }
 
