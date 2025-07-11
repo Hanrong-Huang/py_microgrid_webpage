@@ -861,32 +861,24 @@
 
 /* Installation Section */
 .installation {
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  background: var(--neutral-50);
   padding: var(--spacing-2xl) 0;
-  overflow: hidden;
 }
 
 .installation-steps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2xl);
-  margin-top: var(--spacing-2xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  max-width: 1000px;
+  margin: var(--spacing-2xl) auto 0;
+  padding: 0 var(--spacing-md);
 }
 
 .step-card {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl);
+  display: block;
+  margin-bottom: var(--spacing-2xl);
   background: transparent;
   border: none;
-  border-radius: 0;
+  padding: 0;
   box-shadow: none;
-  transition: all 0.3s ease;
-  position: relative;
 }
 
 .step-card:hover {
@@ -895,47 +887,38 @@
 }
 
 .step-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: 2px;
+  display: none;
 }
 
 .step-number {
-  position: static;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(145deg, var(--primary) 0%, #1e40af 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
   font-weight: 700;
-  font-size: var(--text-2xl);
-  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
-  border: 3px solid white;
-  flex-shrink: 0;
-  z-index: 10;
+  font-size: var(--text-lg);
+  margin-right: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  vertical-align: top;
 }
 
 .step-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-  padding-left: var(--spacing-md);
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
 .step-content h3 {
+  display: inline-block;
   color: var(--primary);
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 var(--spacing-md) 0;
   font-size: var(--text-xl);
   font-weight: 600;
+  vertical-align: top;
 }
 
 .step-content pre {
@@ -943,53 +926,42 @@
   padding: var(--spacing-lg);
   background: var(--neutral-800);
   color: #e5e7eb;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: var(--text-sm);
   line-height: 1.6;
   overflow-x: auto;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 @media (max-width: 768px) {
   .installation-steps {
     margin-top: var(--spacing-xl);
-    gap: var(--spacing-xl);
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-sm);
   }
   
   .step-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-lg);
-  }
-  
-  .step-card::before {
-    display: none;
+    margin-bottom: var(--spacing-xl);
   }
   
   .step-number {
-    width: 50px;
-    height: 50px;
-    font-size: var(--text-lg);
-  }
-  
-  .step-content {
-    padding-left: 0;
-    width: 100%;
+    width: 35px;
+    height: 35px;
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-xs);
   }
   
   .step-content h3 {
     font-size: var(--text-lg);
-    text-align: center;
+    margin-bottom: var(--spacing-sm);
   }
   
   .step-content pre {
     padding: var(--spacing-md);
     font-size: var(--text-xs);
-    text-align: left;
   }
 }
 
