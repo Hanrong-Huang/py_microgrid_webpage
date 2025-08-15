@@ -36,14 +36,20 @@
 
 /* Dark theme variables */
 [data-theme="dark"] {
-  --primary: #3b82f6;
-  --secondary: #10b981;
-  --accent: #f59e0b;
+  --primary: #60a5fa;
+  --secondary: #34d399;
+  --accent: #fbbf24;
   --neutral-50: #0f172a;
   --neutral-500: #94a3b8;
-  --neutral-800: #f1f5f9;
-  --success: #10b981;
-  --warning: #f59e0b;
+  --neutral-800: #f8fafc;
+  --success: #34d399;
+  --warning: #fbbf24;
+  
+  /* Dark theme specific backgrounds */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --border-color: #475569;
 }
 
 * {
@@ -54,7 +60,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Account for fixed header */
+  scroll-padding-top: 90px; /* Account for fixed header */
 }
 
 body {
@@ -65,6 +71,13 @@ body {
   background: linear-gradient(135deg, var(--neutral-50) 0%, #ffffff 50%, var(--neutral-50) 100%);
   min-height: 100vh;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme body styles */
+[data-theme="dark"] body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  color: var(--neutral-800);
 }
 
 .container {
