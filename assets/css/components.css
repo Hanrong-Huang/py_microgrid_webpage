@@ -9,6 +9,7 @@
   border-bottom: 1px solid #e2e8f0;
   z-index: 1000;
   transition: all 0.3s ease;
+  height: 80px; /* Fixed header height */
 }
 
 .nav {
@@ -1668,6 +1669,350 @@
   }
   50% {
     opacity: 0.7;
+  }
+}
+
+/* Performance Showcase Styles */
+.performance-showcase {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+}
+
+.showcase-grid {
+  gap: var(--spacing-xl);
+}
+
+.showcase-card {
+  background: white;
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.showcase-card h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.performance-visual {
+  margin-top: var(--spacing-lg);
+}
+
+/* LCOE Comparison Bars */
+.comparison-bars {
+  margin-bottom: var(--spacing-lg);
+}
+
+.bar-item {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.bar-item.highlight {
+  background: rgba(59, 130, 246, 0.05);
+  border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.bar-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--neutral-800);
+}
+
+.bar-container {
+  position: relative;
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 1s ease;
+  position: relative;
+}
+
+.bar-fill.conventional { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.bar-fill.hybrid { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.bar-fill.optimized { background: linear-gradient(90deg, #10b981, #059669); }
+
+.bar-value {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.improvement-badge {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-value {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.badge-label {
+  font-size: var(--text-sm);
+  color: var(--neutral-500);
+}
+
+/* Renewable Energy Circle */
+.renewable-circle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.circle-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circle-progress svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle-percentage {
+  display: block;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.circle-label {
+  font-size: var(--text-sm);
+  color: var(--neutral-500);
+}
+
+.renewable-breakdown {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-md);
+}
+
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+}
+
+.source-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.source-icon.solar { background: #f59e0b; }
+.source-icon.wind { background: #10b981; }
+
+/* Battery Performance */
+.battery-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.metric-item {
+  text-align: center;
+  padding: var(--spacing-sm);
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: var(--border-radius);
+}
+
+.metric-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-xs);
+}
+
+.metric-value {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.metric-label {
+  font-size: var(--text-xs);
+  color: var(--neutral-500);
+}
+
+.battery-visualization {
+  position: relative;
+  width: 60px;
+  height: 100px;
+  margin: 0 auto;
+  background: #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.battery-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #10b981, #059669);
+  transition: height 1s ease;
+}
+
+.battery-text {
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  font-size: var(--text-xs);
+  color: var(--neutral-500);
+}
+
+/* Multi-Location Analysis */
+.location-results {
+  margin-bottom: var(--spacing-lg);
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.location-item:hover {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.02);
+}
+
+.location-item.best {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.location-name {
+  font-weight: 600;
+  color: var(--neutral-800);
+}
+
+.location-metrics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.location-lcoe {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: var(--text-sm);
+}
+
+.location-renewable {
+  font-size: var(--text-xs);
+  color: var(--secondary);
+}
+
+.analysis-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: var(--border-radius);
+}
+
+.summary-text {
+  font-size: var(--text-sm);
+  color: var(--neutral-500);
+}
+
+@media (max-width: 1024px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .battery-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .renewable-breakdown {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .location-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .location-metrics {
+    align-items: flex-start;
   }
 }
 
