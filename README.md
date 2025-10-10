@@ -40,7 +40,7 @@ php -S localhost:8000
 ```
 
 3. **View the website:**
-   - Open `http://localhost:8000` in your browser
+   - Open `https://hanrong-huang.github.io/py_microgrid_webpage/` in your browser
    - Explore the interactive microgrid diagram and code examples
 
 ### Using Py-Microgrid (Main Package)
@@ -103,7 +103,6 @@ cd Py-Microgrid
 ### External Dependencies
 - **🏢 [NREL HOPP](https://github.com/NREL/HOPP)** - Hybrid optimization framework
 - **🔑 [NREL Developer API](https://developer.nrel.gov/)** - Weather and resource data
-- **🎓 [UNSW Sydney](https://www.unsw.edu.au/)** - Research institution
 
 ## 📄 License & Attribution
 
