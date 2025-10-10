@@ -1,6 +1,6 @@
-# Py-Microgrid Interactive Website
+# Py-Microgrid Website
 
-Professional showcase website for the [Py-Microgrid](https://github.com/Hanrong-Huang/Py-Microgrid) Python package - a comprehensive hybrid microgrid simulation and optimization platform built on NREL's HOPP framework.
+Website for the [Py-Microgrid](https://github.com/Hanrong-Huang/Py-Microgrid) Python package - a comprehensive hybrid microgrid simulation and optimization platform built on NREL's HOPP framework.
 
 ## 🌟 About Py-Microgrid
 
@@ -67,7 +67,7 @@ cd Py-Microgrid
    - Open `py_microgrid/quick_start_example.ipynb` in Jupyter
    - Follow the step-by-step tutorial
 
-## Project Structure
+## Website Structure
 
 ```
 /
@@ -88,15 +88,6 @@ cd Py-Microgrid
         └── deploy.yml      # GitHub Actions deployment
 ```
 
-## 🛠 Technology Stack
-
-### Frontend Technologies
-- **HTML5**: Semantic markup with accessibility best practices
-- **CSS3**: Modern styling with CSS Grid, Flexbox, and custom properties
-- **JavaScript (ES6+)**: Interactive functionality and animations
-- **Font Awesome**: Professional iconography
-- **Google Fonts**: Typography (Inter font family)
-
 ## 🔗 Related Resources
 
 ### Main Py-Microgrid Project
@@ -116,7 +107,7 @@ cd Py-Microgrid
 
 ## 📄 License & Attribution
 
-This website showcases the open-source Py-Microgrid project developed at UNSW Sydney. The main Py-Microgrid package is licensed under the BSD 3-Clause License.
+This website showcases the open-source Py-Microgrid project. The main Py-Microgrid package is licensed under the BSD 3-Clause License.
 
 **Built with ❤️ for the renewable energy community**
 
