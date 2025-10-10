@@ -14,15 +14,6 @@ Py-Microgrid is an open-source Python toolkit for designing, simulating, and opt
 - **HOPP Integration**: Built on NREL's proven HOPP framework with real weather data
 - **Flexible Configuration**: YAML-based configuration with extensive customization options
 
-## 🎯 Website Features
-
-- **Animated Schematic Diagram**: Professional microgrid visualization with energy flow animations
-- **Interactive Code Examples**: Real working examples from the main repository
-- **Responsive Design**: Mobile-first approach optimized for all device sizes
-- **Professional UI**: Industry-grade design with smooth animations and modern styling
-- **Performance Optimized**: Fast loading with optimized assets and lazy loading
-- **SEO Ready**: Comprehensive meta tags and structured data for search visibility
-
 ## 🚀 Quick Start
 
 ### Running the Website Locally
@@ -76,13 +67,6 @@ cd Py-Microgrid
    - Open `py_microgrid/quick_start_example.ipynb` in Jupyter
    - Follow the step-by-step tutorial
 
-### GitHub Pages Deployment
-
-1. Push your code to the `main` branch
-2. GitHub Actions will automatically build and deploy to `gh-pages` branch
-3. Enable GitHub Pages in repository settings
-4. Your site will be available at `https://username.github.io/repository-name`
-
 ## Project Structure
 
 ```
@@ -112,86 +96,6 @@ cd Py-Microgrid
 - **JavaScript (ES6+)**: Interactive functionality and animations
 - **Font Awesome**: Professional iconography
 - **Google Fonts**: Typography (Inter font family)
-
-### Animation & Visual Effects
-- **CSS Animations**: Smooth, performance-optimized transitions
-- **Interactive Diagrams**: Animated energy flow visualization
-- **Responsive Design**: Mobile-first approach with fluid layouts
-- **Modern UI Patterns**: Glass morphism, gradient effects, and micro-interactions
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: `#1e3a8a` (Deep Blue) - Professional, trustworthy
-- **Secondary**: `#059669` (Green) - Renewable energy, sustainability  
-- **Accent**: `#ea580c` (Orange) - Energy, innovation
-- **Neutral Grays**: `#f8fafc`, `#64748b`, `#1e293b` - Balance and readability
-
-### Typography
-- **Headings**: Inter (modern, highly legible)
-- **Body Text**: System font stack for optimal performance
-- **Code Blocks**: JetBrains Mono (developer-friendly)
-
-### Layout System
-- **Container**: Max-width 1200px with responsive padding
-- **Grid**: CSS Grid with 12-column layout system
-- **Spacing**: 8px base unit with consistent scale
-- **Breakpoints**: 640px, 768px, 1024px, 1280px
-
-## Interactive Features
-
-### Demo Calculator
-- Real-time parameter adjustment
-- Location-based optimization
-- Interactive results visualization
-- Chart.js integration for data visualization
-
-### Navigation
-- Smooth scroll navigation
-- Mobile hamburger menu
-- Active state indicators
-- Responsive design
-
-### Animations
-- Scroll-triggered animations
-- Hover effects and micro-interactions
-- Loading states
-- Performance-optimized CSS animations
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance
-
-- **Core Web Vitals**: Optimized for green scores
-- **Load Time**: < 3 seconds on 3G
-- **Accessibility**: WCAG AA compliant
-- **SEO**: 90+ Lighthouse score
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This website is part of the Py-Microgrid project. Please refer to the main project for licensing information.
-
-## 📊 Performance Metrics
-
-- **Core Web Vitals**: Optimized for green Lighthouse scores
-- **Load Time**: < 2 seconds on 3G networks
-- **Accessibility**: WCAG AA compliant with screen reader support
-- **SEO Score**: 95+ Lighthouse SEO rating
-- **Mobile Performance**: Fully responsive with touch-optimized interactions
 
 ## 🔗 Related Resources
 
