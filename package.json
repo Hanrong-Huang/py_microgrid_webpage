@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "dev": "npx http-server -p 8000 -c-1",
-    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:setup": "node -e \"const fs=require('fs');['dist','dist/assets','dist/assets/css','dist/assets/js'].forEach(d=>fs.mkdirSync(d,{recursive:true}))\"",
+    "build": "npm run build:setup && npm run build:css && npm run build:js && npm run build:html",
     "build:css": "cleancss -o dist/assets/css/main.min.css assets/css/main.css assets/css/components.css",
     "build:js": "uglifyjs assets/js/main.js -c -m -o dist/assets/js/main.min.js",
     "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js index.html -o dist/index.html",
