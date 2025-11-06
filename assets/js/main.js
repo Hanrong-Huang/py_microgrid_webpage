@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.feature-card, .step-card, .metric').forEach(el => {
+    document.querySelectorAll('.feature-card, .metric').forEach(el => {
         observer.observe(el);
     });
 });
@@ -269,7 +269,7 @@ const enhancedObserver = new IntersectionObserver(function(entries) {
             entry.target.classList.add('fade-in-up');
             
             // Add staggered animation for child elements
-            const children = entry.target.querySelectorAll('.feature-card, .metric, .step-card');
+            const children = entry.target.querySelectorAll('.feature-card, .metric');
             children.forEach((child, index) => {
                 setTimeout(() => {
                     child.classList.add('fade-in-up');
@@ -316,18 +316,6 @@ function typeWriterEffect() {
     setTimeout(typeChar, 500);
 }
 
-// Enhanced parallax effect for hero section
-function addParallaxEffect() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.5;
-        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    });
-}
-
 // Professional loading animation
 function addLoadingAnimation() {
     const body = document.body;
@@ -344,7 +332,6 @@ function addLoadingAnimation() {
 // Initialize professional enhancements
 addLoadingAnimation();
 // typeWriterEffect(); // Uncomment if you want typing effect
-addParallaxEffect();
 
 // Export functions for external use
 window.PyMicrogridWeb = {
