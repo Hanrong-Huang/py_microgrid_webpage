@@ -1,114 +1,49 @@
 # Py-Microgrid Website
 
-Website for the [Py-Microgrid](https://github.com/Hanrong-Huang/Py-Microgrid) Python package - a comprehensive hybrid microgrid simulation and optimization platform built on NREL's HOPP framework.
+The website for [Py-Microgrid](https://github.com/Hanrong-Huang/Py-Microgrid), an open-source Python toolkit for sizing and optimizing hybrid microgrids (solar PV, wind, battery, and genset) on NREL's HOPP framework.
 
-## 🌟 About Py-Microgrid
+**Live site:** https://hanrong-huang.github.io/py_microgrid_webpage/
 
-Py-Microgrid is an open-source Python toolkit for designing, simulating, and optimizing hybrid microgrid systems. It integrates renewable energy sources (solar PV, wind), energy storage (batteries), and backup generation (gensets) to provide comprehensive energy system analysis.
+## Run locally
 
-### Key Capabilities
-- **System Optimization**: Multi-objective optimization for PV, wind, battery, and genset sizing
-- **Economic Analysis**: LCOE, Net Present Cost, and CO2 emissions calculations
-- **Predictive Battery Dispatch**: Intelligent energy management with up to 20% load reduction
-- **Multi-Location Processing**: Batch analysis for multiple geographical locations
-- **HOPP Integration**: Built on NREL's proven HOPP framework with real weather data
-- **Flexible Configuration**: YAML-based configuration with extensive customization options
-
-## 🚀 Quick Start
-
-### Running the Website Locally
-
-1. **Clone this website repository:**
 ```bash
 git clone https://github.com/Hanrong-Huang/py_microgrid_webpage.git
 cd py_microgrid_webpage
+python -m http.server 8000     # or: npm install && npm run dev
 ```
 
-2. **Serve the website locally:**
+Then open http://localhost:8000.
+
+## Build
+
+The site is static HTML/CSS/JS with no framework. `npm run build` writes a minified copy to `dist/`:
+
 ```bash
-# Option 1: Using Python (recommended)
-python -m http.server 8000
-
-# Option 2: Using Node.js
-npx http-server
-
-# Option 3: Using PHP
-php -S localhost:8000
-
-# Option 4: Using Live Server (VS Code extension)
-# Right-click index.html → "Open with Live Server"
+npm install
+npm run build
 ```
 
-3. **View the website:**
-   - Open `https://hanrong-huang.github.io/py_microgrid_webpage/` in your browser
-   - Explore the interactive microgrid diagram and code examples
-
-### Using Py-Microgrid (Main Package)
-
-To get started with the actual Py-Microgrid simulation package:
-
-1. **Install dependencies:**
-```bash
-pip install HOPP
-conda install -c conda-forge glpk coin-or-cbc -y
-```
-
-2. **Clone the main Py-Microgrid repository:**
-```bash
-git clone https://github.com/Hanrong-Huang/Py-Microgrid.git
-cd Py-Microgrid
-```
-
-3. **Get NREL API key:**
-   - Sign up at [developer.nrel.gov/signup](https://developer.nrel.gov/signup/)
-   - Copy your API key for use in the examples
-
-4. **Run the quick start example:**
-   - Open `py_microgrid/quick_start_example.ipynb` in Jupyter
-   - Follow the step-by-step tutorial
-
-## Website Structure
+## Structure
 
 ```
-/
-├── index.html              # Main homepage
-├── assets/
-│   ├── css/
-│   │   ├── main.css        # Base styles and utilities
-│   │   └── components.css  # Component-specific styles
-│   ├── js/
-│   │   └── main.js         # Interactive functionality
-│   ├── images/             # Image assets
-│   └── fonts/              # Custom fonts
-├── docs/                   # Documentation pages
-├── examples/               # Example pages
-├── api/                    # API documentation
-└── .github/
-    └── workflows/
-        └── deploy.yml      # GitHub Actions deployment
+index.html                 # Single-page site
+assets/css/main.css        # Design tokens, base styles, utilities
+assets/css/components.css  # Component styles
+assets/js/main.js          # Theme toggle, tabs, diagram popups, scroll reveals
+docs/, examples/           # Redirects into index.html
+.github/workflows/         # GitHub Pages deploy
 ```
 
-## 🔗 Related Resources
+## Deploy
 
-### Main Py-Microgrid Project
-- **📦 [Main Repository](https://github.com/Hanrong-Huang/Py-Microgrid)** - The core Python package
-- **📓 [Quick Start Notebook](https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/py_microgrid/quick_start_example.ipynb)** - Jupyter tutorial
-- **📖 [Documentation](https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md)** - Comprehensive guide
+Pushing to `main` triggers the GitHub Actions workflow, which minifies the source into `dist/` and publishes it to GitHub Pages. No manual step required.
 
-### Website & Deployment
-- **🌐 [Live Website](https://hanrong-huang.github.io/py_microgrid_webpage)** - Production site
-- **⚡ [GitHub Pages](https://pages.github.com/)** - Hosting platform
-- **🔄 [GitHub Actions](https://github.com/features/actions)** - Automated deployment
+## About the package
 
-### External Dependencies
-- **🏢 [NREL HOPP](https://github.com/NREL/HOPP)** - Hybrid optimization framework
-- **🔑 [NREL Developer API](https://developer.nrel.gov/)** - Weather and resource data
+Py-Microgrid co-optimizes PV, wind, battery, and genset against a load profile and returns the least-cost system, with LCOE, net present cost, and CO₂ analysis. See the [main repository](https://github.com/Hanrong-Huang/Py-Microgrid) for installation and usage.
 
-## 📄 License & Attribution
+## License
 
-This website showcases the open-source Py-Microgrid project. The main Py-Microgrid package is licensed under the BSD 3-Clause License.
+BSD 3-Clause. Built on [NREL HOPP](https://github.com/NREL/HOPP) and developed at UNSW Sydney.
 
-**Built with ❤️ for the renewable energy community**
-
----
-*For questions about the Py-Microgrid package itself, please visit the [main repository](https://github.com/Hanrong-Huang/Py-Microgrid) or contact [hanrong.huang@unsw.edu.au](mailto:hanrong.huang@unsw.edu.au)*
+Contact: [hanrong.huang@unsw.edu.au](mailto:hanrong.huang@unsw.edu.au)
