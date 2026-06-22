@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Py-Microgrid · Hybrid Microgrid Simulation & Optimization</title><meta name="description" content="Py-Microgrid is an open-source Python toolkit for sizing and optimizing hybrid microgrids (solar PV, wind, battery, and genset) on NREL's HOPP framework, with predictive battery dispatch and full economic analysis."><meta name="keywords" content="microgrid, optimization, renewable energy, HOPP, NREL, PV, wind, battery, genset, simulation, Python, LCOE"><meta name="author" content="Hanrong Huang, UNSW Sydney"><meta property="og:type" content="website"><meta property="og:title" content="Py-Microgrid · Hybrid Microgrid Simulation & Optimization"><meta property="og:description" content="Open-source Python toolkit for sizing and optimizing hybrid microgrids (PV, wind, battery, genset) on NREL's HOPP framework."><meta property="og:url" content="https://hanrong-huang.github.io/py_microgrid_webpage/"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Cpath d='M56 14 32 54h16l-6 32 26-44H50z' fill='%23fff'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"><link rel="stylesheet" href="assets/css/main.css"><link rel="stylesheet" href="assets/css/components.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer="defer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer="defer"></script></head><body><header class="header"><nav class="nav"><div class="container"><div class="nav-content"><a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="nav-logo" target="_blank" rel="noopener"><span class="logo-icon"><i class="fas fa-bolt"></i></span> <span class="logo-text">Py-Microgrid</span></a><div class="nav-links"><a href="#features" class="nav-link">Features</a> <a href="#examples" class="nav-link">Examples</a> <a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md" class="nav-link" target="_blank" rel="noopener">Documentation</a> <a href="#installation" class="nav-link">Install</a> <a href="#contact" class="nav-link">Contact</a></div><div class="nav-actions"><button id="theme-toggle" class="theme-toggle" aria-label="Toggle colour theme"><i class="fas fa-moon theme-icon"></i></button> <a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="btn btn-primary btn-ghost-nav nav-cta" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub </a><button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="hamburger"></span></button></div></div></div></nav><div class="mobile-menu hidden"><div class="mobile-menu-content"><a href="#features" class="mobile-nav-link">Features</a> <a href="#examples" class="mobile-nav-link">Examples</a> <a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md" class="mobile-nav-link" target="_blank" rel="noopener">Documentation</a> <a href="#installation" class="mobile-nav-link">Install</a> <a href="#contact" class="mobile-nav-link">Contact</a> <a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a></div></div></header><main><section class="hero"><div class="container"><div class="hero-content"><div class="hero-text"><span class="hero-badge"><i class="fas fa-circle-nodes"></i> Built on NREL HOPP · Open source</span><h1 class="hero-title">Size and optimize<br><span class="title-highlight">hybrid microgrids</span> in Python</h1><p class="hero-description">Py-Microgrid co-optimizes solar PV, wind, battery storage, and gensets against a real load profile. It returns the least-cost system that meets your demand, with full LCOE, net present cost, and CO₂ analysis.</p><div class="hero-actions"><a href="#installation" class="btn btn-primary btn-lg">Get started</a> <a href="#examples" class="btn btn-outline btn-lg">See an example</a></div><div class="hero-tags"><span class="hero-tag"><i class="fab fa-python"></i> Python 3.10–3.11</span> <span class="hero-tag"><i class="fas fa-scale-balanced"></i> BSD-3 licensed</span> <span class="hero-tag"><i class="fas fa-bolt"></i> PV · Wind · Battery · Genset</span></div></div><div class="hero-visual"><div class="microgrid-diagram" role="img" aria-label="Animated schematic showing solar, wind, battery and genset feeding a central load with energy flowing along the connecting cables"><div class="cable-network"><div class="cable cable-solar-load"></div><div class="cable cable-wind-load"></div><div class="cable cable-battery-load"></div><div class="cable cable-genset-load"></div><div class="cable cable-solar-wind"></div><div class="cable cable-wind-battery"></div><div class="cable cable-battery-genset"></div><div class="cable cable-genset-solar"></div></div><div class="diagram-component solar" tabindex="0" role="button" aria-label="Solar PV details"><div class="component-icon"><i class="fas fa-solar-panel"></i></div><div class="component-label">Solar PV</div><div class="component-tip" role="tooltip"><strong>Solar PV</strong> <span>Panels that turn sunlight into power. The optimizer sizes the array (kW) from NREL solar data for your site.</span></div></div><div class="diagram-component wind" tabindex="0" role="button" aria-label="Wind details"><div class="component-icon"><i class="fas fa-wind"></i></div><div class="component-label">Wind</div><div class="component-tip" role="tooltip"><strong>Wind</strong> <span>The optimizer chooses how many wind turbines to install, using your site's wind resource data.</span></div></div><div class="diagram-component battery" tabindex="0" role="button" aria-label="Battery details"><div class="component-icon"><i class="fas fa-car-battery"></i></div><div class="component-label">Battery</div><div class="component-tip" role="tooltip"><strong>Battery storage</strong> <span>Sized by energy (kWh) and power (kW). Predictive dispatch charges and discharges it to cut cost and peak demand.</span></div></div><div class="diagram-component genset" tabindex="0" role="button" aria-label="Genset details"><div class="component-icon"><i class="fas fa-gas-pump"></i></div><div class="component-label">Genset</div><div class="component-tip" role="tooltip"><strong>Genset</strong> <span>A fuel generator (kW) that covers shortfalls when solar, wind, and storage can't meet the load.</span></div></div><div class="diagram-center" tabindex="0" role="button" aria-label="Load details"><div class="center-icon"><i class="fas fa-city"></i></div><div class="center-label">Load</div><div class="component-tip" role="tooltip"><strong>Site load</strong> <span>Your site's hourly electricity demand. Every configuration is optimized to meet this load at the lowest cost.</span></div></div></div></div></div></div></section><section class="stats-band"><div class="container"><div class="stats-grid"><div class="stat"><div class="stat-value">4</div><div class="stat-label">Technologies co-optimized<br>PV · wind · battery · genset</div></div><div class="stat"><div class="stat-value">3</div><div class="stat-label">Economic metrics reported<br>LCOE · NPC · CO₂</div></div><div class="stat"><div class="stat-value">≤20%</div><div class="stat-label">Peak-load reduction via<br>predictive flexible dispatch</div></div><div class="stat"><div class="stat-value">∞</div><div class="stat-label">Sites per run with<br>multi-location batching</div></div></div></div></section><section id="features" class="section features"><div class="container"><div class="section-header text-center mb-2xl"><span class="eyebrow">Capabilities</span><h2>Everything you need to design a microgrid</h2><p class="section-description">From resource data to a fully costed, dispatched system, all in one toolkit.</p></div><div class="features-grid grid grid-cols-3"><div class="feature-card card"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h3>System optimization</h3><p>Search component sizes against bounds and let the optimizer return the least-cost configuration that meets your load.</p><ul class="feature-list"><li>Multi-objective sizing</li><li>PV, wind, battery &amp; genset</li><li>Bounded search ranges</li></ul></div><div class="feature-card card"><div class="feature-icon"><i class="fas fa-battery-three-quarters"></i></div><h3>Predictive battery dispatch</h3><p>Look-ahead dispatch with optional flexible load shifting that cuts peak demand by up to 20% where the schedule allows.</p><ul class="feature-list"><li>Look-ahead scheduling</li><li>Flexible-load shifting</li><li>Grid-charging control</li></ul></div><div class="feature-card card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Economic analysis</h3><p>Every run reports levelized cost of energy, net present cost, and CO₂ emissions over the full project lifetime.</p><ul class="feature-list"><li>LCOE ($/kWh)</li><li>Net present cost</li><li>CO₂ emissions</li></ul></div><div class="feature-card card"><div class="feature-icon"><i class="fas fa-earth-americas"></i></div><h3>Multi-location batching</h3><p>Loop over any number of sites, pulling location-specific solar and wind resource data for side-by-side comparison.</p><ul class="feature-list"><li>Batch optimization</li><li>Per-site resource data</li><li>Comparative results</li></ul></div><div class="feature-card card"><div class="feature-icon"><i class="fas fa-diagram-project"></i></div><h3>HOPP integration</h3><p>Built directly on NREL's HOPP framework, so simulations use the same validated performance and weather models.</p><ul class="feature-list"><li>NREL resource data</li><li>Validated weather models</li><li>Hourly simulation</li></ul></div><div class="feature-card card"><div class="feature-icon"><i class="fas fa-file-code"></i></div><h3>YAML configuration</h3><p>Define sites, technologies, and dispatch options in one readable YAML file. Re-run a study without touching code.</p><ul class="feature-list"><li>Single config file</li><li>Readable &amp; versionable</li><li>Reproducible runs</li></ul></div></div></div></section><section id="examples" class="section examples-section"><div class="container"><div class="section-header text-center mb-2xl"><span class="eyebrow">Code</span><h2>A few lines to a costed system</h2><p class="section-description">The real package API. Copy, paste, and adapt.</p></div><div class="examples-container"><div class="example-tabs-wrap"><div class="example-tabs" role="tablist"><button class="tab-btn active" data-target="basic-example" role="tab">Basic optimization</button> <button class="tab-btn" data-target="multi-location" role="tab">Multi-location</button> <button class="tab-btn" data-target="config-example" role="tab">Configuration</button></div></div><div class="example-content active" id="basic-example"><div class="code-block"><div class="code-header"><span>Basic optimization</span> <button class="copy-btn" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre><code class="language-python">from py_microgrid.utilities.keys import set_developer_nrel_gov_key
+from py_microgrid.simulation.resource_files import ResourceDataManager
+from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.tools.analysis.bos import EconomicCalculator
+
+# Set your free NREL API key (https://developer.nrel.gov/signup/)
+set_developer_nrel_gov_key('your_api_key_here')
+
+# Download solar and wind resource data for the site
+resources = ResourceDataManager()
+resources.download_solar_data(lat=-33.5265, lon=149.1588)
+resources.download_wind_data(lat=-33.5265, lon=149.1588)
+
+# Configure the economic model
+economics = EconomicCalculator(discount_rate=0.0588, project_lifetime=25)
+
+# Initialise the optimizer with predictive, flexible-load dispatch
+optimizer = SystemOptimizer(
+    yaml_file_path='config/site_config.yaml',
+    economic_calculator=economics,
+    enable_flexible_load=True,
+    max_load_reduction_percentage=0.2,
+)
+
+# Search ranges per component
+bounds = [
+    (5000, 50000),   # PV capacity (kW)
+    (1, 50),         # Number of wind turbines
+    (5000, 30000),   # Battery energy (kWh)
+    (1000, 10000),   # Battery power (kW)
+    (17000, 30000),  # Genset capacity (kW)
+]
+initial = [[b[0] + (b[1] - b[0]) * 0.1 for b in bounds]]
+
+# Run the optimization
+result = optimizer.optimize_system(bounds, initial)
+
+print(f"LCOE:       ${result['System LCOE ($/kWh)']:.4f}/kWh")
+print(f"System NPC: ${result['System NPC ($)']:,.2f}")
+print(f"Demand met: {result['Demand Met Percentage']:.2f}%")</code></pre></div></div><div class="example-content" id="multi-location"><div class="code-block"><div class="code-header"><span>Multi-location batch</span> <button class="copy-btn" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre><code class="language-python">from py_microgrid.utilities import ConfigManager
+from py_microgrid.simulation.resource_files import ResourceDataManager
+from py_microgrid.tools.optimization import SystemOptimizer
+from py_microgrid.tools.analysis.bos import EconomicCalculator
+
+# Sites to evaluate
+sites = [
+    {'name': 'Bathurst',    'lat': -33.5265, 'lon': 149.1588},
+    {'name': 'Broken Hill', 'lat': -31.9550, 'lon': 141.4540},
+    {'name': 'Darwin',      'lat': -12.4634, 'lon': 130.8456},
+]
+
+economics = EconomicCalculator(discount_rate=0.0588, project_lifetime=25)
+bounds = [(5000, 50000), (1, 50), (5000, 30000), (1000, 10000), (17000, 30000)]
+initial = [[b[0] + (b[1] - b[0]) * 0.1 for b in bounds]]
+
+results = {}
+for site in sites:
+    # Pull resource data for this location
+    resources = ResourceDataManager()
+    resources.download_solar_data(lat=site['lat'], lon=site['lon'])
+    resources.download_wind_data(lat=site['lat'], lon=site['lon'])
+
+    # Point the config at this location
+    config = ConfigManager('config/site_config.yaml')
+    data = config.load_yaml_safely()
+    data['site']['data']['lat'] = site['lat']
+    data['site']['data']['lon'] = site['lon']
+    config.save_yaml_safely(data)
+
+    optimizer = SystemOptimizer(
+        yaml_file_path='config/site_config.yaml',
+        economic_calculator=economics,
+    )
+    results[site['name']] = optimizer.optimize_system(bounds, initial)
+
+# Compare LCOE across sites
+for name, r in results.items():
+    print(f"{name:12s} LCOE=${r['System LCOE ($/kWh)']:.4f}/kWh  "
+          f"demand met={r['Demand Met Percentage']:.1f}%")</code></pre></div></div><div class="example-content" id="config-example"><div class="code-block"><div class="code-header"><span>site_config.yaml</span> <button class="copy-btn" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre><code class="language-yaml"># site_config.yaml
+site:
+  data:
+    lat: -33.5265          # site latitude
+    lon: 149.1588          # site longitude
+  solar_resource_file: ""  # auto-filled by ResourceDataManager
+  wind_resource_file: ""
+  grid_resource_file: ""
+  desired_schedule: ""     # hourly load profile, kW
+
+technologies:
+  pv:
+    system_capacity_kw: 10000
+  wind:
+    num_turbines: 5
+  battery:
+    system_capacity_kwh: 10000
+    system_capacity_kw: 2000
+  grid:
+    interconnect_kw: 20000</code></pre></div></div></div><div class="text-center mt-xl"><a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/py_microgrid/quick_start_example.ipynb" class="btn btn-outline" target="_blank" rel="noopener"><i class="fas fa-book-open"></i> Open the quick-start notebook</a></div></div></section><section id="installation" class="section installation"><div class="container"><div class="section-header text-center mb-2xl"><span class="eyebrow">Get started</span><h2>Install in three steps</h2><p class="section-description">Up and running on Python 3.10 or 3.11 in a few minutes.</p></div><div class="installation-steps"><div class="step-card card"><div class="step-number">1</div><div class="step-content"><h3>Install dependencies</h3><pre><code class="language-bash">pip install HOPP
+conda install -c conda-forge glpk coin-or-cbc -y</code></pre></div></div><div class="step-card card"><div class="step-number">2</div><div class="step-content"><h3>Clone the repository</h3><pre><code class="language-bash">git clone https://github.com/Hanrong-Huang/Py-Microgrid.git
+cd Py-Microgrid</code></pre></div></div><div class="step-card card"><div class="step-number">3</div><div class="step-content"><h3>Add your NREL API key</h3><pre><code class="language-bash"># Get a free key: https://developer.nrel.gov/signup/
+# Then in Python:
+#   from py_microgrid.utilities.keys import set_developer_nrel_gov_key
+#   set_developer_nrel_gov_key('your_api_key_here')</code></pre></div></div></div><div class="install-actions"><a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md" class="btn btn-primary" target="_blank" rel="noopener">Read the docs</a> <a href="https://github.com/Hanrong-Huang/Py-Microgrid" class="btn btn-outline" target="_blank" rel="noopener">Browse the repository</a></div></div></section></main><footer id="contact" class="footer"><div class="container"><div class="footer-content"><div class="footer-section"><div class="footer-brand"><span class="logo-icon"><i class="fas fa-bolt"></i></span> Py-Microgrid</div><p>An open-source Python toolkit for designing, simulating, and optimizing hybrid microgrids. Developed at UNSW Sydney and built on NREL's HOPP framework.</p><div class="social-links"><a href="https://github.com/Hanrong-Huang/Py-Microgrid" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a> <a href="mailto:hanrong.huang@unsw.edu.au"><i class="fas fa-envelope"></i> Contact</a></div></div><div class="footer-section"><h4>Resources</h4><ul class="footer-links"><li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/README.md" target="_blank" rel="noopener">Documentation</a></li><li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/py_microgrid/quick_start_example.ipynb" target="_blank" rel="noopener">Quick-start notebook</a></li><li><a href="https://github.com/Hanrong-Huang/Py-Microgrid" target="_blank" rel="noopener">Source code</a></li><li><a href="https://github.com/NREL/HOPP" target="_blank" rel="noopener">NREL HOPP</a></li></ul></div><div class="footer-section"><h4>Support</h4><ul class="footer-links"><li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/issues" target="_blank" rel="noopener">Report an issue</a></li><li><a href="https://github.com/Hanrong-Huang/Py-Microgrid/discussions" target="_blank" rel="noopener">Discussions</a></li><li><a href="https://developer.nrel.gov/signup/" target="_blank" rel="noopener">Get an NREL API key</a></li><li><a href="https://www.unsw.edu.au/" target="_blank" rel="noopener">UNSW Sydney</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><p>&copy; 2026 Py-Microgrid · Licensed under the BSD 3-Clause License.</p><p>Built on NREL's HOPP framework · Python 3.10–3.11.</p></div><div class="footer-links-inline"><a href="https://github.com/Hanrong-Huang/Py-Microgrid/blob/main/LICENSE" target="_blank" rel="noopener">License</a> <span class="separator">·</span> <a href="https://github.com/Hanrong-Huang/Py-Microgrid" target="_blank" rel="noopener">GitHub</a> <span class="separator">·</span> <a href="mailto:hanrong.huang@unsw.edu.au">Contact</a></div></div></div></footer><script src="assets/js/main.js" defer="defer"></script></body></html>
