@@ -1,23 +1,23 @@
 {
   "name": "py-microgrid-website",
   "version": "1.0.0",
-  "description": "Professional website for Py-Microgrid package",
+  "description": "Website for the Py-Microgrid package",
   "main": "index.html",
   "scripts": {
-    "dev": "npx http-server -p 8000 -c-1",
-    "build:setup": "node -e \"const fs=require('fs');['dist','dist/assets','dist/assets/css','dist/assets/js'].forEach(d=>fs.mkdirSync(d,{recursive:true}))\"",
-    "build": "npm run build:setup && npm run build:css && npm run build:js && npm run build:html",
-    "build:css": "cleancss -o dist/assets/css/main.min.css assets/css/main.css assets/css/components.css",
-    "build:js": "uglifyjs assets/js/main.js -c -m -o dist/assets/js/main.min.js",
-    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js index.html -o dist/index.html",
-    "serve": "npx http-server dist -p 8080"
+    "dev": "http-server -p 8000 -c-1",
+    "build": "npm run build:setup && npm run build:css && npm run build:js && npm run build:html && npm run build:copy",
+    "build:setup": "node -e \"const fs=require('fs');['dist/assets/css','dist/assets/js'].forEach(d=>fs.mkdirSync(d,{recursive:true}))\"",
+    "build:css": "cleancss -o dist/assets/css/main.css assets/css/main.css && cleancss -o dist/assets/css/components.css assets/css/components.css",
+    "build:js": "uglifyjs assets/js/main.js -c -m -o dist/assets/js/main.js",
+    "build:html": "html-minifier-terser index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css --minify-js",
+    "build:copy": "node -e \"const fs=require('fs');for(const d of ['docs','examples']){if(fs.existsSync(d))fs.cpSync(d,'dist/'+d,{recursive:true});}for(const f of ['.nojekyll']){if(fs.existsSync(f))fs.copyFileSync(f,'dist/'+f);}\"",
+    "serve": "http-server dist -p 8080"
   },
   "keywords": [
     "microgrid",
     "optimization",
     "renewable-energy",
-    "website",
-    "github-pages"
+    "website"
   ],
   "author": "Hanrong Huang",
   "license": "MIT",

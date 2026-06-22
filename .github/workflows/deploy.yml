@@ -33,7 +33,7 @@ jobs:
         mkdir -p dist
         
         # Copy and minify HTML
-        html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js index.html -o dist/index.html
+        html-minifier-terser index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css --minify-js
         
         # Copy and minify CSS
         mkdir -p dist/assets/css
